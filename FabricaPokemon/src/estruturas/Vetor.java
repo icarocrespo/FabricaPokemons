@@ -1,38 +1,22 @@
-package main;
+package estruturas;
 
-import java.util.HashMap;
-import java.util.Map;
+import nodos.NodoA;
 import util.GenericInterface;
 
-public class Mapa implements GenericInterface{
-    Map<Long, Pokemon> pokemons = new HashMap<Long, Pokemon>();
-    
-    private Pokemon pokemon;
-    private Long chave;
-    
-    public Mapa(){
-        pokemons = null;
-        pokemon = null;
-        chave = null;
-    }
-    
-    public Mapa(Pokemon pokemon, Long chave){
-        this.pokemon = pokemon;
-        chave++;
-    }
-    
-    public String nanoTime(){
-        long tempo = System.nanoTime();
-        return "" + tempo + "";
-    }
+public class Vetor implements GenericInterface{
 
-    @Override
-    public boolean add(Nodo nodo) {
+    
+    public Vetor(){
         
     }
+    
+    @Override
+    public boolean add(NodoA nodo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     @Override
-    public boolean remove(Nodo nodo) {
+    public boolean remove(NodoA nodo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -55,4 +39,5 @@ public class Mapa implements GenericInterface{
     public void removeAllWater() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }

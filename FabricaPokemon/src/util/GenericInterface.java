@@ -1,12 +1,12 @@
 package util;
 
-import main.Nodo;
+import nodos.NodoA;
 
 public interface GenericInterface {
 
-    public boolean add(Nodo nodo);
+    public boolean add(NodoA nodo);
 
-    public boolean remove(Nodo nodo);
+    public boolean remove(NodoA nodo);
 
     public int size();
 

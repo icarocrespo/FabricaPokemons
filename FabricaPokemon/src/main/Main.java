@@ -35,12 +35,16 @@ public class Main {
 
     public static void vetor() {
         System.out.println("Vetor");
-        Vetor vetor = new Vetor();
+        
+        System.out.println("Vetor com 10000 posições");
+        Vetor vetor = new Vetor(10000);
 
     }
 
     public static void arvore() {
         System.out.println("Árvore Binária");
         Arvore arvore = new Arvore();
+        
+        
     }
 }

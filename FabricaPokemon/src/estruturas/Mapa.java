@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import nodos.NodoA;
 import main.Pokemon;
-import util.GenericInterface;
+import nodos.Nodo;
 
-public class Mapa implements GenericInterface{
+public class Mapa implements Interface{
 
     Map<Long, Pokemon> pokemons = new HashMap<Long, Pokemon>();
     
@@ -24,34 +24,34 @@ public class Mapa implements GenericInterface{
         this.pokemon = pokemon;
         chave++;
     }
-    
-    public String nanoTime(){
-        long tempo = System.nanoTime();
-        return "" + tempo + "";
+
+    @Override
+    public boolean add(Nodo nodo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean add(NodoA nodo) {
-        
-    }
-
-    @Override
-    public boolean remove(NodoA nodo) {
+    public boolean remove(Nodo nodo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int size() {
+        return chave.intValue();
+    }
+
+    @Override
+    public int searchType(String type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int searchType() {
+    public int searchTypeFire() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void showAll() {
+    public void showAllAlphabetic() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -59,4 +59,5 @@ public class Mapa implements GenericInterface{
     public void removeAllWater() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }

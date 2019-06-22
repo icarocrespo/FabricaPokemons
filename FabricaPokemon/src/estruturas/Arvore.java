@@ -1,9 +1,9 @@
 package estruturas;
 
+import nodos.Nodo;
 import nodos.NodoA;
-import util.GenericInterface;
 
-public class Arvore implements GenericInterface {
+public class Arvore implements Interface {
 
     private NodoA raiz;
 
@@ -15,35 +15,32 @@ public class Arvore implements GenericInterface {
     }
 
     @Override
-    public boolean add(NodoA nodo) {
+    public boolean add(Nodo nodo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean remove(NodoA nodo) {
+    public boolean remove(Nodo nodo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int size() {
-        return size(this.raiz);
-    }
-
-    public int size(NodoA nodo){
-    if (nodo == null) {
-            return 0;
-        }
-        return size(nodo.getX()) + 1
-                + size(nodo.getY());
-    }
-    
-    @Override
-    public int searchType() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void showAll() {
+    public int searchType(String type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int searchTypeFire() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showAllAlphabetic() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -59,4 +56,5 @@ public class Arvore implements GenericInterface {
     public void setRaiz(NodoA raiz) {
         this.raiz = raiz;
     }
+
 }

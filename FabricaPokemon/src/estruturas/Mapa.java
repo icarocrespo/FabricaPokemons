@@ -6,41 +6,44 @@ import nodos.NodoA;
 import main.Pokemon;
 import nodos.Nodo;
 
-public class Mapa implements Interface{
+public class Mapa {
 
-    Map<Long, Pokemon> pokemons = new HashMap<Long, Pokemon>();
-    
+    Map<Integer, Pokemon> pokemons = new HashMap<>();
+
     private Pokemon pokemon;
-    private Long chave;
-    private Long qtd;
-    
-    public Mapa(){
+    private int chave;
+    private int qtd;
+
+    public Mapa() {
         pokemons = null;
         pokemon = null;
-        chave = null;
+        chave = 0;
     }
-    
-    public Mapa(Pokemon pokemon, Long chave){
+
+    public Mapa(Pokemon pokemon, int chave) {
         this.pokemon = pokemon;
         chave++;
     }
 
-    @Override
-    public boolean add(Nodo nodo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean add(Pokemon pokemon) {
+        try {
+            pokemons.put(chave, pokemon);
+            chave++;
+            return true;
+        } catch (Exception e) {
+            System.out.println("Erro");
+            return false;
+        }
     }
 
-    @Override
     public boolean remove(Nodo nodo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public int size() {
         return chave.intValue();
     }
 
-    @Override
     public int searchType(String type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -59,5 +62,5 @@ public class Mapa implements Interface{
     public void removeAllWater() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

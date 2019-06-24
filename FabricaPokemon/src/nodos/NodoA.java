@@ -5,7 +5,6 @@ import main.Pokemon;
 public class NodoA extends Nodo {
     private NodoA esquerda;
     private NodoA direita;
-    private Pokemon pokemon;
     private static Long CHAVE;
     
     public NodoA(){

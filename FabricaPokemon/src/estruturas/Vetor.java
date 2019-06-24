@@ -1,37 +1,31 @@
 package estruturas;
 
-import nodos.Nodo;
-import nodos.NodoV;
+import main.Pokemon;
 
-public class Vetor implements Interface {
+public class Vetor {
 
     private int numElementos;
-    private NodoV[] nodos;
+    private Pokemon[] pokemons;
 
     public Vetor(int tamanho) {
-        this.nodos = new NodoV[tamanho];
+        this.pokemons = new Pokemon[tamanho];
         numElementos = 0;
     }
 
-    @Override
-    public boolean add(Nodo nodo) {
-        NodoV nodoV = (NodoV) nodo;
-        if (!(this.numElementos != this.nodos.length)) {
-            nodos[numElementos] = nodoV;
+    public boolean add(Pokemon pokemon) {
+        if (!(this.numElementos != this.pokemons.length)) {
+            pokemons[numElementos] = pokemon;
             numElementos++;
             return true;
         }
         return false;
     }
 
-    @Override
-    public boolean remove(Nodo nodo) {
-        NodoV nodoV = (NodoV) nodo;
-
-        int indice = indexOf(nodoV);
+    public boolean remove(Pokemon pokemon) {
+        int indice = indexOf(pokemon);
         if (indice != -1) {
             for (int i = indice; i < (numElementos - 1); i++) {
-                nodos[i] = nodos[i + 1];
+                pokemons[i] = pokemons[i + 1];
             }
             numElementos--;
             return true;
@@ -39,31 +33,28 @@ public class Vetor implements Interface {
         return false;
     }
 
-    @Override
     public int size() {
         return numElementos;
     }
 
-    @Override
     public int searchType(String type) {
         int cont = 0;
         for (int i = 0; i < numElementos; i++) {
-            if (nodos[i].getPokemon().getTipo().contains(type)) {
+            if (pokemons[i].getTipo().contains(type)) {
                 cont++;
             }
         }
         return cont;
     }
 
-    @Override
     public void showAllAlphabetic() {
-        NodoV[] aux = new NodoV[nodos.length];
+        Pokemon[] aux = new Pokemon[pokemons.length];
         //Collator collator = Collator.getInstance();
 
-        for (int i = 0; i < nodos.length; i++) {
-            for (int j = 0; j < nodos.length; j++) {
-                if (nodos[i].getPokemon().getNome().compareTo(nodos[j].getPokemon().getNome()) < 0) {
-                    aux[i] = nodos[j];
+        for (int i = 0; i < pokemons.length; i++) {
+            for (int j = 0; j < pokemons.length; j++) {
+                if (pokemons[i].getNome().compareTo(pokemons[j].getNome()) < 0) {
+                    aux[i] = pokemons[j];
                 }
             }
         }
@@ -79,32 +70,30 @@ public class Vetor implements Interface {
     public void showAll() {
         String vetorString = "[";
         for (int i = 0; i < numElementos; i++) {
-            vetorString += nodos[i]
+            vetorString += pokemons[i]
                     + "";
         }
         vetorString += "]";
         System.out.println(vetorString);;
     }
 
-    @Override
     public void removeAllWater() {
         for (int i = 0; i < numElementos; i++) {
-            if (nodos[i].getPokemon().getTipo().contains("Agua")) {
-                remove(nodos[i]);
+            if (pokemons[i].getTipo().contains("Agua")) {
+                remove(pokemons[i]);
             }
         }
     }
 
-    public int indexOf(NodoV nodo) {
+    public int indexOf(Pokemon nodo) {
         for (int i = 0; i < numElementos; i++) {
-            if (nodos[i] == nodo) {
+            if (pokemons[i] == nodo) {
                 return i;
             }
         }
         return -1;
     }
 
-    @Override
     public int searchTypeFire() {
         return searchType("Fogo");
     }

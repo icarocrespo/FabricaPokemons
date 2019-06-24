@@ -4,7 +4,5 @@ import main.Pokemon;
 
 public class Nodo {
 
-    private Pokemon pokemon;
-    
-    
+    protected Pokemon pokemon;
 }

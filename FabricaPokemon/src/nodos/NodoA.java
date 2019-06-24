@@ -5,17 +5,21 @@ import main.Pokemon;
 public class NodoA extends Nodo {
     private NodoA esquerda;
     private NodoA direita;
-    private static Long CHAVE;
+    private static Integer CHAVE;
+    private int chave;
     
     public NodoA(){
         this.esquerda = null;
         this.esquerda = null;
+        this.pokemon = null;
+        this.chave = 0;
     }
     
-    public NodoA(NodoA esquerda, NodoA direita, Pokemon pokemon){
+    public NodoA(NodoA esquerda, NodoA direita, Pokemon pokemon, int chave){
         this.esquerda = esquerda;
         this.direita = direita;
         this.pokemon = pokemon;
+        this.chave = chave;
     }
 
     public NodoA getEsquerda() {
@@ -41,6 +45,21 @@ public class NodoA extends Nodo {
     public void setPokemon(Pokemon pokemon) {
         this.pokemon = pokemon;
     }
+
+    public int getChave() {
+        return chave;
+    }
+
+    public void setChave(int chave) {
+        this.chave = chave;
+    }
     
-    
+    private void alterKey(){
+        if((CHAVE.toString()).charAt(0) == '-'){
+            CHAVE = (2 * CHAVE) + 1;
+            
+        }else{
+            CHAVE = (2 * CHAVE) + 1;
+        }
+    }
 }

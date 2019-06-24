@@ -7,6 +7,8 @@ import estruturas.Vetor;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import testes.TesteA;
+import testes.TesteM;
 import testes.TesteV;
 
 public class Main {
@@ -29,22 +31,28 @@ public class Main {
 
     public static void mapa() {
         GeradorDePokemon geradorDePokemon = GeradorDePokemon.getInstancia();
-
         System.out.println("Mapa:");
-        Mapa mapa = new Mapa();
 
-        System.out.println("10000");
-        System.out.println("Tempo decorrido em nanossegundos: " + Main.nanoTime());
-        System.out.println("Tempo decorrido: " + Main.time(Main.nanoTime()));
-        
-        System.out.println("100000");
-        System.out.println("Tempo decorrido em nanossegundos: " + Main.nanoTime());
-        System.out.println("Tempo decorrido: " + Main.time(Main.nanoTime()));
-        
-        System.out.println("1000000");
-        System.out.println("Tempo decorrido em nanossegundos: " + Main.nanoTime());
-        System.out.println("Tempo decorrido: " + Main.time(Main.nanoTime()));
+        // testes de inserção de pokemons no mapa
+        TesteM testeM = new TesteM();
 
+        //Ordem 10000
+        testeM.gera10000(geradorDePokemon);
+        testeM.contaFogo10000();
+        testeM.alfabetico10000();
+        testeM.removeAgua10000();
+        
+        //Ordem 100000
+        testeM.gera100000(geradorDePokemon);
+        testeM.contaFogo100000();
+        testeM.alfabetico100000();
+        testeM.removeAgua100000();
+        
+        //Ordem 1000000
+        testeM.gera1000000(geradorDePokemon);
+        testeM.contaFogo1000000();
+        testeM.alfabetico1000000();
+        testeM.removeAgua1000000();
     }
 
     public static void vetor() {
@@ -52,43 +60,50 @@ public class Main {
         System.out.println("Vetor");
         
         // testes de inserção de pokemons no vetor
-        TesteV vetores = new TesteV();
+        TesteV testeV = new TesteV();
         
         //Ordem 10000
-        vetores.gera10000(geradorDePokemon);
-        vetores.contaFogo10000();
-        vetores.alfabetico10000();
-        vetores.removeAgua10000();
+        testeV.gera10000(geradorDePokemon);
+        testeV.contaFogo10000();
+        testeV.alfabetico10000();
+        testeV.removeAgua10000();
         
         //Ordem 100000
-        vetores.gera100000(geradorDePokemon);
-        vetores.contaFogo100000();
-        vetores.alfabetico100000();
-        vetores.removeAgua100000();
+        testeV.gera100000(geradorDePokemon);
+        testeV.contaFogo100000();
+        testeV.alfabetico100000();
+        testeV.removeAgua100000();
         
         //Ordem 1000000
-        vetores.gera1000000(geradorDePokemon);
-        vetores.contaFogo1000000();
-        vetores.alfabetico1000000();
-        vetores.removeAgua1000000();
+        testeV.gera1000000(geradorDePokemon);
+        testeV.contaFogo1000000();
+        testeV.alfabetico1000000();
+        testeV.removeAgua1000000();
     }
 
     public static void arvore() {
         GeradorDePokemon geradorDePokemon = GeradorDePokemon.getInstancia();
+        System.out.println("Arvore binária");
         
-        System.out.println("Árvore Binária");
-        Arvore arvore = new Arvore();
-
-        System.out.println("10000");
-        System.out.println("Tempo decorrido em nanossegundos: " + Main.nanoTime());
-        System.out.println("Tempo decorrido: " + Main.time(Main.nanoTime()));
+        // testes de inserção de pokemons no vetor
+        TesteA testeA = new TesteA();
         
-        System.out.println("100000");
-        System.out.println("Tempo decorrido em nanossegundos: " + Main.nanoTime());
-        System.out.println("Tempo decorrido: " + Main.time(Main.nanoTime()));
+        //Ordem 10000
+        testeA.gera10000(geradorDePokemon);
+        testeA.contaFogo10000();
+        testeA.alfabetico10000();
+        testeA.removeAgua10000();
         
-        System.out.println("1000000");
-        System.out.println("Tempo decorrido em nanossegundos: " + Main.nanoTime());
-        System.out.println("Tempo decorrido: " + Main.time(Main.nanoTime()));
+        //Ordem 100000
+        testeA.gera100000(geradorDePokemon);
+        testeA.contaFogo100000();
+        testeA.alfabetico100000();
+        testeA.removeAgua100000();
+        
+        //Ordem 1000000
+        testeA.gera1000000(geradorDePokemon);
+        testeA.contaFogo1000000();
+        testeA.alfabetico1000000();
+        testeA.removeAgua1000000();
     }
 }

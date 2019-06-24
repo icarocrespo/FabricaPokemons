@@ -4,9 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/main/Main.java</file>
-            <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/testes/TesteV.java</file>
+            <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/nodos/NodoA.java</file>
+            <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/nodos/NodoM.java</file>
+            <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/main/Pokemon.java</file>
+            <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/testes/TesteA.java</file>
             <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/main/GeradorDePokemon.java</file>
-            <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/estruturas/Vetor.java</file>
+            <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/estruturas/Arvore.java</file>
+            <file>file:/C:/Users/icaro/Documents/Unipampa/3º%20semestre/Estrutura%20de%20Dados/FabricaPokemons/FabricaPokemon/src/estruturas/Mapa.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,34 +1,37 @@
 package estruturas;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
-import nodos.NodoA;
+import java.util.Set;
 import main.Pokemon;
 import nodos.Nodo;
+import nodos.NodoM;
 
-public class Mapa {
+public class Mapa implements Interface {
 
-    Map<Integer, Pokemon> pokemons = new HashMap<>();
+    Map<Integer, NodoM> pokemons = new HashMap<>();
 
     private Pokemon pokemon;
-    private int chave;
-    private int qtd;
+    private static int CHAVE = Mapa.next();
+    private int quantidade;
 
     public Mapa() {
-        pokemons = null;
-        pokemon = null;
-        chave = 0;
+        this.pokemons = null;
+        this.pokemon = null;
+        quantidade = 0;
     }
 
-    public Mapa(Pokemon pokemon, int chave) {
-        this.pokemon = pokemon;
-        chave++;
+    public static int next() {
+        return CHAVE++;
     }
 
-    public boolean add(Pokemon pokemon) {
+    @Override
+    public boolean add(Nodo generic) {
         try {
-            pokemons.put(chave, pokemon);
-            chave++;
+            NodoM nodo = (NodoM) generic;
+            this.pokemons.put(nodo.getChave(), nodo);
+            this.quantidade++;
             return true;
         } catch (Exception e) {
             System.out.println("Erro");
@@ -36,31 +39,62 @@ public class Mapa {
         }
     }
 
-    public boolean remove(Nodo nodo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public boolean remove(Nodo generic) {
+        try {
+            NodoM nodo = (NodoM) generic;
+            pokemons.remove(nodo.getChave());
+            this.quantidade--;
+            return true;
+        } catch (Exception e) {
+            System.out.println("Erro");
+            return false;
+        }
     }
 
+    @Override
     public int size() {
-        return chave.intValue();
+        return quantidade;
     }
 
+    @Override
     public int searchType(String type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int cont = 0;
+        try {
+            Set<Integer> chaves = pokemons.keySet();
+            Integer chave;
+            for (Iterator<Integer> iterator = chaves.iterator(); iterator.hasNext();) {
+                chave = iterator.next();
+                if (chave != null && pokemons.get(chave).getPokemon().getTipo().equals(type)) {
+                    cont++;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erro");
+        }
+        return cont;
     }
 
     @Override
     public int searchTypeFire() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return searchType("Fogo");
     }
 
     @Override
     public void showAllAlphabetic() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void removeAllWater() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Set<Integer> chaves = pokemons.keySet();
+        Integer chave;
+        for (Iterator<Integer> iterator = chaves.iterator(); iterator.hasNext();) {
+            chave = iterator.next();
+            if (chave != null && pokemons.get(chave).getPokemon().getTipo().equals("Agua")) {
+                pokemons.remove(chave);
+            }
+        }
     }
 
 }

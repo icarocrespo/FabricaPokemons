@@ -20,6 +20,7 @@ public class Mapa implements Interface {
         this.pokemons = null;
         this.pokemon = null;
         quantidade = 0;
+        CHAVE = 1;
     }
 
     public static int next() {
@@ -28,15 +29,11 @@ public class Mapa implements Interface {
 
     @Override
     public boolean add(Nodo generic) {
-        try {
-            NodoM nodo = (NodoM) generic;
-            this.pokemons.put(nodo.getChave(), nodo);
-            this.quantidade++;
-            return true;
-        } catch (Exception e) {
-            System.out.println("Erro");
-            return false;
-        }
+        NodoM nodo = (NodoM) generic;
+        this.pokemons.put(nodo.getChave(), nodo);
+        this.quantidade++;
+        return true;
+
     }
 
     @Override
@@ -82,7 +79,7 @@ public class Mapa implements Interface {
 
     @Override
     public void showAllAlphabetic() {
-        
+
     }
 
     @Override

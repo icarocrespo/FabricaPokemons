@@ -14,9 +14,9 @@ import testes.TesteV;
 public class Main {
 
     public static void main(String[] args) {
-//        Main.mapa();
-        Main.vetor();
-  //      Main.arvore();
+        Main.mapa();
+        //Main.vetor();
+        //Main.arvore();
     }
 
     public static long nanoTime() {
@@ -38,21 +38,24 @@ public class Main {
 
         // testes de inserção de pokemons no mapa
         TesteM testeM = new TesteM();
-
+        Mapa mapa10000 = new Mapa();
+        Mapa mapa100000 = new Mapa();
+        Mapa mapa1000000 = new Mapa();
+        
         //Ordem 10000
-        testeM.gera10000(geradorDePokemon);
+        mapa10000 = testeM.gera10000(geradorDePokemon);
         testeM.contaFogo10000();
         testeM.alfabetico10000();
         testeM.removeAgua10000();
         
         //Ordem 100000
-        testeM.gera100000(geradorDePokemon);
+        mapa100000 = testeM.gera100000(geradorDePokemon);
         testeM.contaFogo100000();
         testeM.alfabetico100000();
         testeM.removeAgua100000();
         
         //Ordem 1000000
-        testeM.gera1000000(geradorDePokemon);
+        mapa1000000 = testeM.gera1000000(geradorDePokemon);
         testeM.contaFogo1000000();
         testeM.alfabetico1000000();
         testeM.removeAgua1000000();
@@ -64,7 +67,6 @@ public class Main {
         
         // testes de inserção de pokemons no vetor
         TesteV testeV = new TesteV();
-        Pokemon[] pokemons;
         
         Vetor vetor10000;
         Vetor vetor100000;

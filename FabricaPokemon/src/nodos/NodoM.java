@@ -4,21 +4,26 @@ import main.Pokemon;
 
 public class NodoM extends Nodo {
 
-    private int chave;
+    private Integer chave;
 
     public NodoM(Pokemon pokemon) {
         this.pokemon = pokemon;
     }
 
+    public NodoM(Pokemon pokemon, Integer chave) {
+        this.pokemon = pokemon;
+        this.chave = chave;
+    }
+    
     public NodoM() {
 
     }
 
-    public int getChave() {
+    public Integer getChave() {
         return chave;
     }
 
-    public void setChave(int chave) {
+    public void setChave(Integer chave) {
         this.chave = chave;
     }
 

@@ -56,10 +56,10 @@ public class NodoA extends Nodo {
     
     private void alterKey(){
         if((CHAVE.toString()).charAt(0) == '-'){
-            CHAVE = (2 * CHAVE) + 1;
+            CHAVE = (2 * CHAVE) + (CHAVE * -1) + 1;
             
         }else{
-            CHAVE = (2 * CHAVE) + 1;
+            CHAVE = (2 * CHAVE) + (CHAVE * -1) -1;
         }
     }
 }

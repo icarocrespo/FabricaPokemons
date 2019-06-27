@@ -16,13 +16,13 @@ public class Arvore implements Interface {
 
     @Override
     public boolean add(Nodo nodo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return add(raiz, (NodoA) nodo);
     }
 
     public boolean add(NodoA atual, NodoA novo) {
         if (novo.getChave() == atual.getChave()) {
             return false;
-        } else if (novo.5getChave() < chave) {
+        } else if (novo.getChave() < chave) {
             if (atual.getEsquerda()== null) {
                 atual.setEsquerda(novo);
                 return true;

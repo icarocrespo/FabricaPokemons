@@ -13,7 +13,7 @@ public class Vetor {
     }
 
     public boolean add(Pokemon pokemon) {
-        if (!(this.numElementos != this.pokemons.length)) {
+        if (this.numElementos < this.pokemons.length) {
             pokemons[numElementos] = pokemon;
             numElementos++;
             return true;
@@ -37,9 +37,13 @@ public class Vetor {
         return numElementos;
     }
 
+    public int searchTypeFire() {
+        return searchType("Fogo");
+    }
+    
     public int searchType(String type) {
         int cont = 0;
-        for (int i = 0; i < numElementos; i++) {
+        for (int i = 0; i < pokemons.length; i++) {
             if (pokemons[i].getTipo().contains(type)) {
                 cont++;
             }
@@ -53,7 +57,7 @@ public class Vetor {
 
         for (int i = 0; i < pokemons.length; i++) {
             for (int j = 0; j < pokemons.length; j++) {
-                if (pokemons[i].getNome().compareTo(pokemons[j].getNome()) < 0) {
+                if (pokemons[i].getNome().compareTo(pokemons[j].getNome()) > 0) {
                     aux[i] = pokemons[j];
                 }
             }
@@ -94,8 +98,21 @@ public class Vetor {
         return -1;
     }
 
-    public int searchTypeFire() {
-        return searchType("Fogo");
+    
+
+    public int getNumElementos() {
+        return numElementos;
     }
 
+    public void setNumElementos(int numElementos) {
+        this.numElementos = numElementos;
+    }
+
+    public Pokemon[] getPokemons() {
+        return pokemons;
+    }
+
+    public void setPokemons(Pokemon[] pokemons) {
+        this.pokemons = pokemons;
+    }    
 }

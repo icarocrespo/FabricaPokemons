@@ -14,19 +14,22 @@ import testes.TesteV;
 public class Main {
 
     public static void main(String[] args) {
-        Main.mapa();
+//        Main.mapa();
         Main.vetor();
-        Main.arvore();
+  //      Main.arvore();
     }
 
     public static long nanoTime() {
-        return System.currentTimeMillis();
+        return System.nanoTime();
     }
 
-    public static String time(long time) {
-        DateFormat simple = new SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z");
-        Date data = new Date(time);
-        return data.toString();
+    public static long time(long antes, long depois) {
+        long tempo;
+        antes = antes / 1000;
+        depois = depois / 1000;
+        
+        tempo = depois - antes;
+        return tempo;
     }
 
     public static void mapa() {
@@ -61,24 +64,31 @@ public class Main {
         
         // testes de inserção de pokemons no vetor
         TesteV testeV = new TesteV();
+        Pokemon[] pokemons;
+        
+        Vetor vetor10000;
+        Vetor vetor100000;
+        Vetor vetor1000000;
         
         //Ordem 10000
-        testeV.gera10000(geradorDePokemon);
-        testeV.contaFogo10000();
-        testeV.alfabetico10000();
-        testeV.removeAgua10000();
+        vetor10000 = testeV.gera10000(geradorDePokemon);
+        testeV.contaFogo10000(vetor10000);
+        testeV.alfabetico10000(vetor10000);
+        testeV.removeAgua10000(vetor10000);
         
         //Ordem 100000
-        testeV.gera100000(geradorDePokemon);
-        testeV.contaFogo100000();
-        testeV.alfabetico100000();
-        testeV.removeAgua100000();
+        vetor100000 = testeV.gera100000(geradorDePokemon);
+        testeV.contaFogo100000(vetor100000);
+        testeV.alfabetico100000(vetor100000);
+        testeV.removeAgua100000(vetor100000);
         
         //Ordem 1000000
-        testeV.gera1000000(geradorDePokemon);
-        testeV.contaFogo1000000();
-        testeV.alfabetico1000000();
-        testeV.removeAgua1000000();
+        vetor1000000 = testeV.gera1000000(geradorDePokemon);
+        testeV.contaFogo1000000(vetor1000000);
+        testeV.alfabetico1000000(vetor1000000);
+        testeV.removeAgua1000000(vetor1000000);
+    
+        
     }
 
     public static void arvore() {
